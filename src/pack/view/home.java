@@ -264,6 +264,7 @@ public class home extends javax.swing.JFrame {
         Btn_Hapus.setBounds(190, 370, 150, 30);
 
         Btn_Keluar.setBackground(new java.awt.Color(204, 0, 51));
+        Btn_Keluar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Keluar.setText("K E L U A R");
         Btn_Keluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
