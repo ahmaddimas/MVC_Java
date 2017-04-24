@@ -40,7 +40,6 @@ public class home extends javax.swing.JFrame {
         ctoko.isiTable();
         getCbKategori().setSelectedItem(null);
         getCbJenis().setSelectedItem(null);
-        setAdmin(new login().getUser().getText());
     }
 
     public JTextField getTxtKode(){ 
@@ -340,7 +339,8 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_Tabel1MouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
+        String user = login.user;
+        txtadmin.setText(" "+user);
     }//GEN-LAST:event_formWindowOpened
 
     /**

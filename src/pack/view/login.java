@@ -10,7 +10,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JTextField;
+import pack.control.login_koneksi;
 import pack.dao.daoToko;
 import pack.dao.implementToko;
 
@@ -20,7 +22,7 @@ import pack.dao.implementToko;
  */
 public class login extends javax.swing.JFrame {
 
-    private String user;
+    public static String user;
 
     /**
      * Creates new form login
@@ -136,7 +138,17 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String user = txtnama.getText();
+        String p = txtpass.getText();
+        
+        try{
+            try(Statement statement = (Statement) login_koneksi.GetConnection().createStatement()){
+                statement.executeUpdate("INSERT INTO tb_akun VALUES ('"+user+"', '"+p+"')");
+            } 
+            JOptionPane.showMessageDialog(null, "Sign Up Berhasil");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "GAGAL! Silahkan Ulangi");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
